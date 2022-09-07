@@ -4,5 +4,9 @@
   "description": "Projeto de testes de aceitação do app Buger Eats",
   "main": "index.js",
   "author": "Wesley Steve <wesley.silva23@hotmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.7.16",
+    "typescript": "^4.8.2"
+  }
 }
