@@ -13,6 +13,7 @@
         "cypress"
     ],
     "parserOptions": {
+        "project": "./tsconfig.json",
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
