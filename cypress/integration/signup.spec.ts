@@ -21,7 +21,8 @@ describe('Signup', () => {
         datails: 'Ap 100',
         district: 'Itaim Bibi',
         city_uf: 'São Paulo/SP'
-      }
+      },
+      delivery_method: 'Moto'
     }
 
     // preenchendo os campos de acordo com a massa definida
@@ -45,5 +46,7 @@ describe('Signup', () => {
 
     cy.get('input[name=city-uf]')
       .should('have.value', deliver.address.city_uf)
+
+    cy.contains('.delivery-method li', deliver.delivery_method).click()
   })
 })
