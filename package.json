@@ -5,9 +5,16 @@
   "main": "index.js",
   "author": "Wesley Steve <wesley.silva23@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "npx cypress open",
+    "test:run": "npx cypress run",
+    "test:staged": "yarn test:run",
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@types/node": "^18.7.16",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "cypress": "9.7.0",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^22.0.0",
     "eslint-plugin-cypress": "^2.12.1",
