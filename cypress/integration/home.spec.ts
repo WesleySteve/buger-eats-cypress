@@ -1,6 +1,6 @@
 
 describe('home page', () => {
-  it('app deve estar online', () => {
+  it('App should be online', () => {
     cy.visit('/')
     // para garantir que essa função esteja ok podemos pegar um texto na tela
     // utilizando este selector garantimos que estamos pegando o seletor exato
