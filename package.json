@@ -1,0 +1,8 @@
+{
+  "name": "burger-eats-cypress",
+  "version": "1.0.0",
+  "description": "Projeto de testes de aceitação do app Buger Eats",
+  "main": "index.js",
+  "author": "Wesley Steve <wesley.silva23@hotmail.com>",
+  "license": "MIT"
+}
