@@ -23,6 +23,14 @@
         "cypress/assertion-before-screenshot": "warn",
         "cypress/no-force": "warn",
         "cypress/no-async-tests": "error",
-        "cypress/no-pause": "error"
+        "cypress/no-pause": "error",
+        "@typescript-eslint/triple-slash-reference": "error",
+        "@typescript-eslint/strict-boolean-expressions": "off",
+        "@typescript-eslint/consistent-type-definitions": "off",
+        "@typescript-eslint/comma-spacing": "off",
+        "@typescript-eslint/return-await": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "import/export": "off"
     }
 }
