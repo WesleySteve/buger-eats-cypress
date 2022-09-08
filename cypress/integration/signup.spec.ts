@@ -52,6 +52,20 @@ describe('Signup', () => {
     SignupPage.alertMessageShouldBe(expectedMessage)
   })
 
+  it('Delivery Method Van/Carro', () => {
+    const deliver = SignupFactory.deliver()
+
+    deliver.delivery_method = 'Van/Carro'
+
+    SignupPage.go()
+    SignupPage.fillForm(deliver)
+    SignupPage.submit()
+
+    const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
+
+    SignupPage.modalContentShouldBe(expectedMessage)
+  })
+
   context('Required fields', function () {
     const messages = [
       { field: 'name', output: 'É necessário informar o nome' },
