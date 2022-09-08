@@ -14,6 +14,20 @@ describe('Signup', () => {
     SignupPage.modalContentShouldBe(expectedMessage)
   })
 
+  it('Incorrect CPF', () => {
+    const deliver = SignupFactory.deliver()
+
+    deliver.cpf = 'x215468792@'
+
+    SignupPage.go()
+    SignupPage.fillForm(deliver)
+    SignupPage.submit()
+
+    const expectedMessage = 'Oops! CPF inválido'
+
+    SignupPage.alertMessageShouldBe(expectedMessage)
+  })
+
   context('Required fields', function () {
     const messages = [
       { field: 'name', output: 'É necessário informar o nome' },
