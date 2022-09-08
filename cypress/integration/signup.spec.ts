@@ -1,14 +1,7 @@
+import SignupPage from '../pages/SignupPage'
 
 describe('Signup', () => {
   it('User should be register as delivery', () => {
-    cy.visit('/')
-
-    cy.get('#page-home main a[href="/deliver"]').click()
-
-    // checkpoint
-    cy.get('#page-deliver form h1')
-      .should('have.text', 'Cadastre-se para  fazer entregas')
-
     const deliver = {
       name: 'Wesley',
       cpf: '00000022254',
@@ -24,7 +17,10 @@ describe('Signup', () => {
       },
       delivery_method: 'Moto',
       cnh: 'cnh-digital.jpg'
+
     }
+
+    SignupPage.go()
 
     // preenchendo os campos de acordo com a massa definida
     cy.get('input[name=fullName]').type(deliver.name)
