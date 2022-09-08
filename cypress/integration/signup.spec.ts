@@ -28,6 +28,20 @@ describe('Signup', () => {
     SignupPage.alertMessageShouldBe(expectedMessage)
   })
 
+  it('Incorrect Email', () => {
+    const deliver = SignupFactory.deliver()
+
+    deliver.email = 'teste.com'
+
+    SignupPage.go()
+    SignupPage.fillForm(deliver)
+    SignupPage.submit()
+
+    const expectedMessage = 'Oops! Email com formato inválido.'
+
+    SignupPage.alertMessageShouldBe(expectedMessage)
+  })
+
   context('Required fields', function () {
     const messages = [
       { field: 'name', output: 'É necessário informar o nome' },
