@@ -6,7 +6,7 @@
 
 
 ### Project Install Dependencies
-yarn install
+yarn
 
 ### Project running with graphic screen
 yarn test
