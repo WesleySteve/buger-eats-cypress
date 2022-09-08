@@ -22,7 +22,8 @@ describe('Signup', () => {
         district: 'Itaim Bibi',
         city_uf: 'São Paulo/SP'
       },
-      delivery_method: 'Moto'
+      delivery_method: 'Moto',
+      cnh: 'cnh-digital.jpg'
     }
 
     // preenchendo os campos de acordo com a massa definida
@@ -48,5 +49,14 @@ describe('Signup', () => {
       .should('have.value', deliver.address.city_uf)
 
     cy.contains('.delivery-method li', deliver.delivery_method).click()
+
+    cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh)
+
+    cy.get('form button[type=submit]').click()
+
+    const expectedMessage = 'Recebemos os seus dados. Fique de olho na sua caixa de email, pois e em breve retornamos o contato.'
+
+    cy.get('.swal2-container .swal2-html-container')
+      .should('have.text', expectedMessage)
   })
 })
