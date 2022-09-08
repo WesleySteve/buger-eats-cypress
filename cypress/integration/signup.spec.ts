@@ -42,6 +42,16 @@ describe('Signup', () => {
     SignupPage.alertMessageShouldBe(expectedMessage)
   })
 
+  it('Blank CEP', () => {
+    SignupPage.go()
+
+    cy.get('input[type=button][value="Buscar CEP"]').click()
+
+    const expectedMessage = 'Informe um CEP válido'
+
+    SignupPage.alertMessageShouldBe(expectedMessage)
+  })
+
   context('Required fields', function () {
     const messages = [
       { field: 'name', output: 'É necessário informar o nome' },
